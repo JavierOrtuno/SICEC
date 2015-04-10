@@ -23,4 +23,13 @@ public class LoginController {
     public String getLoginPage() {
         return "login/login";
     }
+
+    /**
+     * Get the home page.
+     * @return home page
+     */
+    @RequestMapping(value = {"/home.html"}, method = {RequestMethod.GET})
+    public String getHome() {
+        return "helloWorld";
+    }
 }
