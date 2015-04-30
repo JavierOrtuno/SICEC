@@ -8,6 +8,7 @@ package com.bytesoft.sicec.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -19,8 +20,9 @@ import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
  * Application Configuration class from spring framework.
  */
 @Configuration
-@ComponentScan(basePackages = "com.bytesoft.sicec.controller")
 @EnableWebMvc
+@ComponentScan(basePackages = "com.bytesoft.sicec.controller")
+@Import({ SecurityConfiguration.class })
 public class AppConfiguration extends WebMvcConfigurerAdapter {
 
     /**

@@ -4,6 +4,6 @@
 <%@ page pageEncoding="UTF-8"%>
 <tiles:insertDefinition name="main">
     <tiles:putAttribute name="body">
-        HELLO BITCH asdad asd as das da sd
+        HELLO BITCH HOME
     </tiles:putAttribute>
 </tiles:insertDefinition>

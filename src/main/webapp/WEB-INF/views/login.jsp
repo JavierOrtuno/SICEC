@@ -9,6 +9,7 @@
         <title>Login</title>
 
         <spring:url value="bootstrap/css/bootstrap.min.css" var="bootstrap" />
+        <spring:url value="j_spring_security_check" var="actionLogin" />
         <link href="${bootstrap}" rel="stylesheet" >
     </head>
 
@@ -17,17 +18,17 @@
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" name="loginForm" action="${actionLogin}" method="POST">
                         <div class="form-group">
                             <label for="username" class="col-sm-4 control-label">Username:</label>
                             <div class="col-sm-8">
-                                <input type="user" class="form-control" id="username" placeholder="Username">
+                                <input type="user" class="form-control" id="username" name="username" placeholder="Username">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="passwordId" class="col-sm-4 control-label">Password:</label>
+                            <label for="password" class="col-sm-4 control-label">Password:</label>
                             <div class="col-sm-8">
-                                <input value="" type="password" class="form-control" id="passwordId" placeholder="Password">
+                                <input value="" type="password" class="form-control" id="password" name="password" placeholder="Password">
                             </div>
                         </div>
                         <div class="form-group">
@@ -35,6 +36,8 @@
                                 <button type="submit" class="btn btn-default">Submit</button>
                             </div>
                         </div>
+                        <input type="hidden" 
+                            name="${_csrf.parameterName}" value="${_csrf.token}" />
                     </form>
                 </div>
                 <div class="col-md-4"></div>
